@@ -1,0 +1,11 @@
+main(){
+
+int fja(int e){
+int y;
+e=e+y;
+return y;
+}
+
+int x;
+x=fja(x);
+}

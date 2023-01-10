@@ -1,0 +1,13 @@
+main() {
+int x;
+x=3;
+while x>=3 {
+write(x);
+}
+
+int y;
+y=5;
+if x>=3 then
+read(y);
+
+}

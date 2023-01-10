@@ -1,0 +1,25 @@
+Program → MAIN LEFTPAR RIGHTPAR Block
+Block →  CURLYBRAL   StatementList CURLYBRAR		
+VarDecl → Type NameList SEMI			
+NameList  → NameList COMMA ID |	 ID
+Type → INTEGER | CHAR |  REAL |  BOOL
+StatementList → StatementList Statement|  StatementList VarDecl | VarDecl | Statement
+Statement → WHILE Expression CURLYBRAL Statement CURLYBRAR
+            | ID ASSIGN Expression SEMI
+             | READ LEFTPAR ID RIGHTPAR SEMI
+             | WRITE LEFTPAR Expression  RIGHTPAR SEMI
+             | Block  | FunctionDecl  | FunctionCall | RETURN Expression SEMI  | IF Expression THEN Statement
+
+FunctionDecl → Type ID LEFTPAR ParamList RIGHTPAR CURLYBRAL StatementList CURLYBRAR
+FunctionCall → ID LEFTPAR ArgList RIGHTPAR SEMI | ID ASSIGN ID LEFTPAR ArgList RIGHTPAR SEMI
+ParamList → ParamList COMMA ParamDecl| ParamDecl
+ParamDecl → Type ID
+ArgList →  ID | ArgList COMMA ID
+Expression  → Expression OR AndExpression | AndExpression
+AndExpression → AndExpression AND RelExpression       | RelExpression
+RelExpression → ArExpression RelOp ArExpression | ArExpression
+RelOp  → LESS| LESSEQUAL | EQUALEQUAL| NOTEQUAL | GREATER| GREATEREQUAL
+ArExpression → ArExpression  PLUS Term | ArExpression MINUS Term | Term
+Term → Term MUL Factor | Term DIV Factor | Factor
+Factor  → ID |  Const | LEFTPAR Expression RIGHTPAR
+Const → INTCONST| REALCONST | BOOLCONST | CHARCONST  

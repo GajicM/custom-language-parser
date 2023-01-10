@@ -1,0 +1,21 @@
+main()
+{
+
+int x;
+int y;
+
+int sum(int x, int y) {
+    return x + y;
+    int z;
+    z=4;
+    write(z);
+  }
+
+x= sum(x,y);
+
+    while NO CAP  {
+    x=5;
+
+       }
+       read(x);
+}
